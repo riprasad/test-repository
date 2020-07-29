@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Run script
-        run: ./.github/scripts/hello.sh
+        run: echo $(git rev-parse --abbrev-ref HEAD)
