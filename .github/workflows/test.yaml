@@ -11,12 +11,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: echo Branch
-        run: echo $(git rev-parse --abbrev-ref HEAD)
+        run: |
+          echo $(git rev-parse --abbrev-ref HEAD)
+          echo $(git branch --show-current)
+          ls -artl      
+      - name: Run Script
+        run: sudo ./.github/scripts/hello.sh
       
       - name: Run Script
-        run: ./.github/scripts/hello.sh
-      
-      - name: Run Script
-        run: ./.github/scripts/test.sh
+        run: sudo ./.github/scripts/test.sh
 
   
