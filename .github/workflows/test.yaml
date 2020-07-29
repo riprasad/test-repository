@@ -7,5 +7,16 @@ jobs:
   release:
     runs-on: ubuntu-18.04
     steps:
-      - name: Run script
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: echo Branch
         run: echo $(git rev-parse --abbrev-ref HEAD)
+      
+      - name: Run Script
+        run: ./.github/scripts/hello.sh
+      
+      - name: Run Script
+        run: ./.github/scripts/test.sh
+
+  
