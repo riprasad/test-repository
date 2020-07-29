@@ -1,0 +1,11 @@
+name: Release Workflow
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  release:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Run script
+        run: ./.github/scripts/hello.sh
